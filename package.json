@@ -4,7 +4,7 @@
   "description": "[![Actions Status](https://github.com/HelenHorner/frontend-project-lvl1/workflows/hexlet-check/badge.svg)](https://github.com/HelenHorner/frontend-project-lvl1/actions)",
   "main": "index.js",
   "type": "module",
-    "scripts": {
+  "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -17,8 +17,10 @@
     "url": "https://github.com/HelenHorner/frontend-project-lvl1/issues"
   },
   "homepage": "https://github.com/HelenHorner/frontend-project-lvl1#readme",
-
-"bin": {
-  "brain-games": "bin/brain-games.js"
-}
+  "bin": {
+    "brain-games": "bin/brain-games.js"
+  },
+  "dependencies": {
+    "readline-sync": "^1.4.10"
+  }
 }
