@@ -2,4 +2,4 @@ import readlineSync from 'readline-sync'; //    импорт библиотек�
 
 const userName = readlineSync.question('May I have your name? ');
 
-export { userName };
+export default { userName };
