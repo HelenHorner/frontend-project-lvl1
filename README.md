@@ -3,3 +3,4 @@
 <a href="https://github.com/HelenHorner/frontend-project-lvl1/actions/workflows/node.js.yml"><img src="https://github.com/HelenHorner/frontend-project-lvl1/actions/workflows/node.js.yml/badge.svg"></a>
 https://asciinema.org/a/YeThHRoK5eZB7J8jzkjUdVn2x
 https://asciinema.org/a/Exb44reCxNT1slKnju4u9ZuR5
+https://asciinema.org/a/Th0Vu4qUbh85jmBTxowSZtL6C
