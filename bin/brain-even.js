@@ -11,8 +11,8 @@ const getRandomNumber = () => {
 const fuckinFunction = () => {
   for (let i = 0; i < 3; i += 1) {
     const n = getRandomNumber();
-    const answer = readlineSync.question(n);
-  
+    const answer = readlineSync.question(`${n} `);
+
     if (answer === 'yes' && n % 2 === 0) {
       console.log('Correct!');
     } else if (answer === 'no' && n % 2 === 0) {
