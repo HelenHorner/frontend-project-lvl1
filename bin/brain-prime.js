@@ -8,7 +8,7 @@ const randomInteger = (min, max) => {
   const rand = min + Math.random() * (max + 1 - min);
   return Math.floor(rand);
 };
-const prime = (num) =>{
+const prime = (num) => {
   let result = 0;
   for (let i = num - 1; i > 0; i -= 1) {
     if (num % i === 0) {
