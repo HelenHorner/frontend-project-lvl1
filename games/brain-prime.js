@@ -1,7 +1,6 @@
 import readlineSync from 'readline-sync';
 import userName from '../src/cli.js';
-import randomInteger from '../src/index.js';
-import prime from '../src/index.js';
+import { randomInteger, prime } from '../src/index.js';
 
 const primeFunction = () => {
   for (let i = 0; i < 3; i += 1) {
