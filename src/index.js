@@ -49,6 +49,32 @@ const prime = (num) => {
   }
   return result === 1;
 };
+
+const showCorrectAnswer = () => {
+  console.log('Correct!');
+};
+
+const showCongrats = (name) => {
+  console.log(`Congratulations, ${name}!`);
+};
+
+const showWrongAnswer = (name) => {
+  console.log(`Is wrong answer ;(. Let's try again, ${name}!`);
+};
+
+const showAgainTime = (name) => {
+  console.log(`Let's try again, ${name}!`);
+};
+
+const showNoIsWrong = () => {
+  console.log('"no" is wrong answer ;(. Correct answer was "yes".');
+};
+
+const showYesIsWrong = () => {
+  console.log('"yes" is wrong answer ;(. Correct answer was "no".');
+};
+
 export {
-  randomInteger, NOD, progress, prime,
+  randomInteger, NOD, progress, prime, showCorrectAnswer, showCongrats, showWrongAnswer,
+  showAgainTime, showNoIsWrong, showYesIsWrong,
 };
