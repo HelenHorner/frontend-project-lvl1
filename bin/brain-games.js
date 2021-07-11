@@ -1,4 +1,5 @@
 #!/usr/bin/env node
-import { startHello } from '../src/cli.js';
+import { startHello, getUserName } from '../src/cli.js';
 
 startHello();
+getUserName();
