@@ -1,17 +1,33 @@
-import { randomInteger, progress } from '../index.js';
-import startGameEngine from '../game engine.js';
+import randomInteger from '../utils.js';
+import startGameEngine from '../game-engine.js';
+
+const description = 'What number is missing in the progression?';
+
+const getProgression = (startNum, difNum, progressionLength) => {
+  const result = [];
+  result.push(startNum);
+  let newNum = startNum;
+  for (let i = 0; i < progressionLength; i += 1) {
+    newNum += difNum;
+    result.push(newNum);
+  }
+  return result;
+};
+
+const genRound = () => {
+  const index = randomInteger(0, 9);
+  const startNum = randomInteger(1, 100);
+  const difNum = randomInteger(1, 20);
+  const progressionLength = randomInteger(10, 20);
+  const progression = getProgression(startNum, difNum, progressionLength);
+  const answer = String(progression[index]);
+  progression[index] = '..';
+  const question = progression.join(' ');
+  return [question, answer];
+};
 
 const startProgression = () => {
-  const description = 'What number is missing in the progression?';
-  const getQA = () => {
-    const index = randomInteger(0, 9);
-    const arr = progress();
-    const correctAnswer = String(arr[index]);
-    arr[index] = '..';
-    const question = `${arr[0]} ${arr[1]} ${arr[2]} ${arr[3]} ${arr[4]} ${arr[5]} ${arr[6]} ${arr[7]} ${arr[8]} ${arr[9]}`;
-    return [question, correctAnswer];
-  };
-  startGameEngine(description, getQA);
+  startGameEngine(description, genRound);
 };
 
 export default startProgression;

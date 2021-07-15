@@ -1,5 +1,5 @@
 #!/usr/bin/env node
-import { startHello, getUserName } from '../src/cli.js';
+import getUserName from '../src/cli.js';
 
-startHello();
-getUserName();
+console.log('Welcome to the Brain Games!');
+console.log(`Hello, ${getUserName()}!`);

@@ -1,31 +1,35 @@
-import { randomInteger } from '../index.js';
-import startGameEngine from '../game engine.js';
+import randomInteger from '../utils.js';
+import startGameEngine from '../game-engine.js';
 
-const getCorrectAnswer = (num1, num2, symbol) => {
-  let correctAnswer = 0;
-  if (symbol === '-') {
-    correctAnswer = num1 - num2;
-  } else if (symbol === '*') {
-    correctAnswer = num1 * num2;
-  } else if (symbol === '+') {
-    correctAnswer = num1 + num2;
+const description = 'What is the result of the expression?';
+
+const ops = ['+', '-', '*'];
+
+const calc = (num1, num2, operation) => {
+  switch (operation) {
+    case '-':
+      return num1 - num2;
+    case '*':
+      return num1 * num2;
+    case '+':
+      return num1 + num2;
+    default:
+      return operation;
   }
-  return correctAnswer;
+};
+
+const genRound = () => {
+  const opsIndex = randomInteger(0, ops.length - 1);
+  const num1 = randomInteger(1, 100);
+  const num2 = randomInteger(1, 100);
+  const operation = ops[opsIndex];
+  const question = `${num1} ${operation} ${num2} `;
+  const answer = String(calc(num1, num2, operation));
+  return [question, answer];
 };
 
 const startCalc = () => {
-  const description = 'What is the result of the expression?';
-  const ops = ['+', '-', '*'];
-  const getQA = () => {
-    const opsIndex = randomInteger(0, 2);
-    const num1 = randomInteger(1, 100);
-    const num2 = randomInteger(1, 100);
-    const symbol = ops[opsIndex];
-    const question = `${num1} ${symbol} ${num2} `;
-    const correctAnswer = String(getCorrectAnswer(num1, num2, symbol));
-    return [question, correctAnswer];
-  };
-  startGameEngine(description, getQA);
+  startGameEngine(description, genRound);
 };
 
 export default startCalc;

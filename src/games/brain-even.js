@@ -1,21 +1,31 @@
-import startGameEngine from '../game engine.js';
-import { randomInteger } from '../index.js';
+import startGameEngine from '../game-engine.js';
+import randomInteger from '../utils.js';
 
-const getCorrectAnswer = (n) => {
-  if (n % 2 === 0) {
+const description = 'Answer "yes" if the number is even, otherwise answer "no"';
+
+const isEven = (num) => {
+  if (num % 2 === 0) {
+    return true;
+  }
+  return false;
+};
+
+const getAnswer = (num) => {
+  if (isEven(num)) {
     return 'yes';
   }
   return 'no';
 };
 
-const startEven = () => {
-  const description = 'Answer "yes" if the number is even, otherwise answer "no"';
-  const getQA = () => {
-    const n = randomInteger(1, 100);
-    const question = `${n}`;
-    const correctAnswer = String(getCorrectAnswer(n));
-    return [question, correctAnswer];
-  };
-  startGameEngine(description, getQA);
+const genRound = () => {
+  const num = randomInteger(1, 100);
+  const question = String(num);
+  const answer = getAnswer(num);
+  return [question, answer];
 };
+
+const startEven = () => {
+  startGameEngine(description, genRound);
+};
+
 export default startEven;
